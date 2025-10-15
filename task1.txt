@@ -1,1 +1,29 @@
+function hasTwoCubeSums(n) {
+  const pairs = [];
+  const limit = Math.floor(Math.cbrt(n));
 
+  for (let a = 1; a <= limit; a++) {
+    for (let b = a + 1; b <= limit; b++) {
+      if (a  3 + b  3 === n) {
+        pairs.push([a, b]);
+      }
+    }
+  }
+
+  return pairs.length >= 2;
+}function subnetInfo(ip, subnet) {
+  const ipParts = ip.split('.').map(Number);
+  const subnetParts = subnet.split('.').map(Number);
+
+  const network = [];
+  const host = [];
+
+  for (let i = 0; i < 4; i++) {
+    const net = ipParts[i] & subnetParts[i];
+    const hostPart = ipParts[i] - net;
+    network.push(net);
+    host.push(hostPart);
+  }
+
+  return [, ];
+}
